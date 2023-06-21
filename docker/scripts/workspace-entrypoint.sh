@@ -13,6 +13,7 @@ echo "alias build_workspace='cd /workspaces/isaac_ros-dev && colcon build --syml
 echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 source /opt/ros/${ROS_DISTRO}/setup.bash
 
+
 sudo apt-get update
 rosdep update
 
@@ -32,5 +33,9 @@ source ${ROS_ROOT}/install/setup.bash && apt-get update || true && rosdep update
 
 # Restart udev daemon
 sudo service udev restart
+sudo chmod 666 /dev/ttyACMPico
+
+echo "source /workspaces/isaac_ros-dev/install/local_setup.bash" >> ~/.bashrc
+source /workspaces/isaac_ros-dev/install/local_setup.bash
 
 $@

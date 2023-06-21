@@ -183,6 +183,8 @@ docker run -it --rm \
     ${DOCKER_ARGS[@]} \
     -v $ISAAC_ROS_DEV_DIR:/workspaces/isaac_ros-dev \
     -v /dev/*:/dev/* \
+    -v /dev/ttyACMPico:/dev/ttyACMPico \
+    -v /dev/input/js0:/dev/input/js0 \
     -v /etc/localtime:/etc/localtime:ro \
     --name "$CONTAINER_NAME" \
     --runtime nvidia \
