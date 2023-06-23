@@ -1,0 +1,9 @@
+# Dockerfile for setting up Micro-ROS
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+# COPY scripts/setup-micro-ros.sh /opt/micro-ros/setup-micro-ros.sh
+# RUN chmod +x /opt/micro-ros/setup-micro-ros.sh && /opt/micro-ros/setup-micro-ros.sh
+
+# Copy custom udev rules file
+COPY udev_rules/99-hoverbot.rules /etc/udev/rules.d/99-hoverbot.rules
